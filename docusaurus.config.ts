@@ -8,7 +8,7 @@ const config: Config = {
   favicon: "img/favicon.ico",
 
   url: "https://mayfest-documentation.github.io",
-  baseUrl: "/",
+  baseUrl: "/mayfest-documentation/",
   organizationName: "mayfest-documentation",
   projectName: "mayfest-documentation",
   trailingSlash: false,
