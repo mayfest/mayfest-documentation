@@ -88,7 +88,7 @@ const config: Config = {
           title: "Community",
           items: [
             {
-              label: "Stack Overflow",
+              label: "Instagram",
               href: "https://stackoverflow.com/questions/tagged/docusaurus",
             },
             {
