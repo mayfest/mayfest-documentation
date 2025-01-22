@@ -6,14 +6,12 @@ const config: Config = {
   title: "Mayfest Productions Documentation Website",
   tagline: "Documentation website for Mayfest Productions projects",
   favicon: "img/favicon.ico",
-
   url: "https://mayfest-documentation.github.io",
   baseUrl: "/mayfest-documentation/",
   organizationName: "mayfest-documentation",
   projectName: "mayfest-documentation",
   trailingSlash: false,
   deploymentBranch: "gh-pages",
-
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
 
@@ -27,14 +25,42 @@ const config: Config = {
       "classic",
       {
         docs: {
-          sidebarPath: "./sidebars.ts",
+          path: "docs/mayfest-productions-core",
+          routeBasePath: "docs",
+          sidebarPath: require.resolve("./sidebars.mayfest-core.ts"),
           editUrl:
             "https://github.com/mayfest-documentation/mayfest-documentation/tree/main/",
         },
         theme: {
           customCss: "./src/css/custom.css",
         },
+        blog: false,
+        pages: false,
       } satisfies Preset.Options,
+    ],
+  ],
+  plugins: [
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "dillo-day-platforms",
+        path: "docs/dillo-day-platforms",
+        routeBasePath: "dillo-day-platforms",
+        sidebarPath: require.resolve("./sidebars.dillo-day-platforms.ts"),
+        editUrl:
+          "https://github.com/mayfest-documentation/mayfest-documentation/tree/main/",
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "learning-resources",
+        path: "docs/learning-resources",
+        routeBasePath: "learning-resources",
+        sidebarPath: require.resolve("./sidebars.learning-resources.ts"),
+        editUrl:
+          "https://github.com/mayfest-documentation/mayfest-documentation/tree/main/",
+      },
     ],
   ],
 
@@ -48,10 +74,24 @@ const config: Config = {
       },
       items: [
         {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
+          type: "doc",
+          docId: "intro",
           position: "left",
-          label: "Docs",
+          label: "Mayfest Productions Core",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "dillo-day-platforms",
+          docsPluginId: "dillo-day-platforms",
+          position: "left",
+          label: "Dillo Day Platforms",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "learning-resources",
+          docsPluginId: "learning-resources",
+          position: "left",
+          label: "Learning Resources",
         },
         {
           href: "https://github.com/mayfest-documentation/mayfest-documentation",
