@@ -5,7 +5,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config: Config = {
   title: "Mayfest Productions Documentation Website",
   tagline: "Documentation website for Mayfest Productions projects",
-  favicon: "img/favicon.ico",
+  favicon: "img/dillo.png",
   url: "https://mayfest-documentation.github.io",
   baseUrl: "/mayfest-documentation/",
   organizationName: "mayfest-documentation",
@@ -63,7 +63,7 @@ const config: Config = {
 
   themeConfig: {
     colorMode: {
-      defaultMode: "light",
+      defaultMode: "dark",
       disableSwitch: false,
       respectPrefersColorScheme: false,
     },
@@ -71,7 +71,7 @@ const config: Config = {
       title: "Mayfest Docs",
       logo: {
         alt: "Mayfest Logo",
-        src: "img/logo.svg",
+        src: "img/dillo.png",
         href: "https://www.dilloday.com/",
       },
       items: [
