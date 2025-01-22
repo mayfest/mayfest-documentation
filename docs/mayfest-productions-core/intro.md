@@ -1,7 +1,10 @@
 ---
+id: intro
+title: Introduction
 sidebar_position: 1
+slug: /
 ---
 
-# Introduction to Dillo Day Platforms
+# Introduction
 
-Welcome to the Dillo Day Platforms documentation.
+Your introduction content here..

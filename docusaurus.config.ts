@@ -14,7 +14,6 @@ const config: Config = {
   deploymentBranch: "gh-pages",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
@@ -25,20 +24,22 @@ const config: Config = {
       "classic",
       {
         docs: {
+          id: "mayfest-productions-core",
           path: "docs/mayfest-productions-core",
-          routeBasePath: "docs",
+          routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.mayfest-core.ts"),
           editUrl:
-            "https://github.com/mayfest-documentation/mayfest-documentation/tree/main/",
-        },
-        theme: {
-          customCss: "./src/css/custom.css",
+            "https://github.com/mayfest-documentation/mayfest-documentation/tree/main",
         },
         blog: false,
         pages: false,
+        theme: {
+          customCss: "./src/css/custom.css",
+        },
       } satisfies Preset.Options,
     ],
   ],
+
   plugins: [
     [
       "@docusaurus/plugin-content-docs",
@@ -47,8 +48,6 @@ const config: Config = {
         path: "docs/dillo-day-platforms",
         routeBasePath: "dillo-day-platforms",
         sidebarPath: require.resolve("./sidebars.dillo-day-platforms.ts"),
-        editUrl:
-          "https://github.com/mayfest-documentation/mayfest-documentation/tree/main/",
       },
     ],
     [
@@ -58,19 +57,22 @@ const config: Config = {
         path: "docs/learning-resources",
         routeBasePath: "learning-resources",
         sidebarPath: require.resolve("./sidebars.learning-resources.ts"),
-        editUrl:
-          "https://github.com/mayfest-documentation/mayfest-documentation/tree/main/",
       },
     ],
   ],
 
   themeConfig: {
-    image: "img/docusaurus-social-card.jpg",
+    colorMode: {
+      defaultMode: "light",
+      disableSwitch: false,
+      respectPrefersColorScheme: false,
+    },
     navbar: {
       title: "Mayfest Docs",
       logo: {
         alt: "Mayfest Logo",
         src: "img/logo.svg",
+        href: "https://www.dilloday.com/",
       },
       items: [
         {
@@ -78,20 +80,21 @@ const config: Config = {
           docId: "intro",
           position: "left",
           label: "Mayfest Productions Core",
+          docsPluginId: "mayfest-productions-core",
         },
         {
-          type: "docSidebar",
-          sidebarId: "dillo-day-platforms",
-          docsPluginId: "dillo-day-platforms",
+          type: "doc",
+          docId: "intro",
           position: "left",
           label: "Dillo Day Platforms",
+          docsPluginId: "dillo-day-platforms",
         },
         {
-          type: "docSidebar",
-          sidebarId: "learning-resources",
-          docsPluginId: "learning-resources",
+          type: "doc",
+          docId: "intro",
           position: "left",
           label: "Learning Resources",
+          docsPluginId: "learning-resources",
         },
         {
           href: "https://github.com/mayfest-documentation/mayfest-documentation",
@@ -104,20 +107,19 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "Docs",
+          title: "Documentation",
           items: [
             {
-              label: "Documentation",
-              to: "/docs/intro",
+              label: "Mayfest Productions Core",
+              to: "/",
             },
-          ],
-        },
-        {
-          title: "Community",
-          items: [
             {
-              label: "Instagram",
-              href: "https://www.instagram.com/mayfest",
+              label: "Dillo Day Platforms",
+              to: "/dillo-day-platforms/intro",
+            },
+            {
+              label: "Learning Resources",
+              to: "/learning-resources/intro",
             },
           ],
         },
@@ -131,7 +133,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Mayfest Productions. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Mayfest Productions`,
     },
     prism: {
       theme: prismThemes.github,
