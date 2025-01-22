@@ -39,11 +39,6 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "dillo-app/setup",
-          label: "Local Development Setup",
-        },
-        {
-          type: "doc",
           id: "dillo-app/features",
           label: "Feature Overview",
         },
