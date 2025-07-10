@@ -59,6 +59,15 @@ const config: Config = {
         sidebarPath: require.resolve("./sidebars.learning-resources.ts"),
       },
     ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "director-transition",
+        path: "docs/director-transition",
+        routeBasePath: "director-transition",
+        sidebarPath: require.resolve("./sidebars.director-transition.ts"),
+      }
+    ]
   ],
 
   themeConfig: {
@@ -95,6 +104,13 @@ const config: Config = {
           position: "left",
           label: "Learning Resources",
           docsPluginId: "learning-resources",
+        },
+        {
+          type: "doc",
+          docId: "intro",
+          position: "left",
+          label: "Director Transition",
+          docsPluginId: "director-transition"
         },
         {
           href: "https://github.com/mayfest-documentation/mayfest-documentation",
