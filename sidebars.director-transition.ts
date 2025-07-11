@@ -28,11 +28,6 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "overview/deliverables",
-          label: "Main Deliverables and Responsibilities",
-        },
-        {
-          type: "doc",
           id: "overview/the-future",
           label: "The Future of the Technology Team",
         },
