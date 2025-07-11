@@ -159,6 +159,60 @@ Examples:
 This is one the "weirder" projects since we got but not a lot of work done
 this year for it.
 
+Currently, the email builder is hosted [here](https://email-builder-template-eta.vercel.app/)
+
+:::note
+
+The email builder template is currently hosted on _my_ personal GitHub.
+
+I will work on getting it deployed instead, inside of the Mayfest Productions
+
+GitHub organization
+:::
+
+### The Hard Parts
+
+The **core** of the Email builder, which is of course, to make emails is pretty complete.
+We basically put together and got rid of stuff from different open source libraries.
+
+The only things that realistically need to be added to the frontend of the Email Builder
+is the following:
+
+1. Some way of authenticating that a person has access to the website (Google OAuth)
+2. Some way of checking if a specific user has access to send emails to specific group of People
+3. Some way of creating email groups for example: (1) Mayfest All Org (everyone in Mayfest)
+(2) Mayfest Mailing List - everyone who registered for the Mayfest mailing list.
+
+(2) is important because you may have for example, Community exec want to send an email to
+Mayfest all org, but the technology director(s) may want to send an email to everyone in the
+Mayfest Emailing list. So, the auth flow needs to check if a user had the required
+authorization to make sure that they can send to whatever email group they want to send too.
+
+**The real hard part here though is the backend**.
+
+Last year, Sofia and I tried to get access to [Amazon SES](https://aws.amazon.com/ses/) because
+it was going to the cheapest way of sending emails to the thousands of people
+that are in the Mayfest Mailing List (you can look at the Firebase or use the dillo day CLI to see
+the exact number).
+
+There are more alternatives to do this, but it requires a lot of work both in logistics
+as well as development. It would be nice to be fully transitioned off of Mailchimp.
+
+This is probably the _hardest_ project because Email is super hard to do **right**.
+
+If I would suggest some goals if you want to make progress on this. This is an order
+of priorities that I recommend:
+
+1. Figure out which email provider to use (definitely will need to talk to Finance about this)
+2. Make a prototype of a backend, connect to the current frontend and test within Mayfest internally first
+3. If internal test go well, try to see how it scales with a larger user base. Maybe all Mayfest and Alumni?...
+
+:::warn
+
+I wouldn't stress too much about this project, since in all honestly, it's not the _most_ important
+project that needs to be worked on or figured out. But, if you have someone who is really interested in email,
+this could be a good solo project for someone to do by themselves, as long as they **actually make progress on it**.
+
 ## Keeping Development Consistent
 
 ### Frontend Development
@@ -256,5 +310,3 @@ for something like this, it's better to rely on serverless
 architectures more than serverful. It makes scaling much easier
 and stress free even if it's not the most "technical"
 approach or solution.
-
-## Tech Teams Place in Mayfest
